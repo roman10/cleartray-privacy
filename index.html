@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cleartray Privacy Policy</title>
+<meta name="description" content="Privacy policy for the Cleartray Android app — everything you put into Cleartray stays on your device." />
+<style>
+  :root { color-scheme: light dark; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 64px;
+    color: #1a1a1a;
+    background: #fafafa;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { background: #111; color: #e6e6e6; }
+    a { color: #f6a06b; }
+    table { background: #1a1a1a; }
+    th, td { border-color: #333; }
+    code { background: #222; }
+    hr { border-color: #333; }
+  }
+  h1 { font-size: 1.9rem; margin: 0 0 .3em; }
+  h2 { font-size: 1.25rem; margin: 2em 0 .4em; border-bottom: 1px solid #ddd; padding-bottom: .2em; }
+  h3 { font-size: 1.05rem; margin: 1.4em 0 .3em; }
+  p, li { margin: .5em 0; }
+  a { color: #c2531b; }
+  table { width: 100%; border-collapse: collapse; margin: 1em 0; }
+  th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; font-size: .95rem; }
+  th { background: rgba(0,0,0,.04); }
+  code { background: rgba(0,0,0,.06); padding: 1px 5px; border-radius: 3px; font-size: .92em; }
+  hr { border: 0; border-top: 1px solid #ddd; margin: 2em 0; }
+  .meta { color: #666; font-size: .92rem; margin-bottom: 1.5em; }
+  .tag { font-size: .78rem; color: #666; }
+</style>
+</head>
+<body>
+
+<h1>Cleartray Privacy Policy</h1>
+<p class="meta">
+  <strong>Effective date:</strong> 2026-05-20<br />
+  <strong>App:</strong> Cleartray (Android <code>app.cleartray</code>)<br />
+  <strong>Publisher contact:</strong> <a href="mailto:feipeng@clarifisg.com">feipeng@clarifisg.com</a>
+</p>
+
+<p>Cleartray is an independent productivity app inspired by the Getting Things Done® (GTD) methodology. This policy explains exactly what the app does — and does not do — with your data.</p>
+
+<p>The short version: <strong>everything you put into Cleartray lives on your device.</strong> The app has no user account, no server backend, and no analytics. Crash reporting is <strong>opt-in and off by default</strong>.</p>
+
+<hr />
+
+<h2>1. Data you create in the app</h2>
+<p>Everything you capture in Cleartray — items, projects, contexts, areas, attachments (photos, voice memos), reviews, settings — is written to a local SQLite database in the app's private storage on your device.</p>
+<p>We do not transmit this content anywhere. There is no cloud sync, no remote backup, no "Cleartray account." We cannot see your tasks, your notes, or any attachments.</p>
+<p>If you uninstall the app, this data is removed by the operating system along with the app's storage. There is no copy held by us to delete on request, because no copy ever leaves your device.</p>
+
+<h2>2. Backup and restore</h2>
+<p>Cleartray includes a <strong>JSON export/import</strong> in Settings → Backup. When you tap Export, the app writes a JSON file and hands it to the system share sheet. From there <em>you</em> choose where it goes (Files, Drive, email, another app). The file is your data, in plain JSON, under your control. We never receive it.</p>
+<p>Restoring works the same way in reverse: you pick a previously exported file and the app reads it locally.</p>
+
+<h2>3. Permissions and why we ask for them</h2>
+<p>Cleartray requests these Android permissions. Each is used only for the feature named, and the resulting data stays on your device.</p>
+<table>
+  <thead>
+    <tr><th>Permission</th><th>What it enables</th><th>Data leaves device?</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>POST_NOTIFICATIONS</code></td>
+      <td>Show reminder notifications (due dates, weekly review nudge).</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code>USE_EXACT_ALARM</code> / <code>SCHEDULE_EXACT_ALARM</code></td>
+      <td>Fire reminders at the exact scheduled minute (inexact alarms drift up to an hour).</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code>RECEIVE_BOOT_COMPLETED</code></td>
+      <td>Re-arm pending reminders after a reboot or app update.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code>RECORD_AUDIO</code></td>
+      <td>Voice-to-text capture and voice-memo attachments. Audio is processed by the on-device speech recognizer (Google's STT, governed by your device's settings) for transcription. Voice-memo attachments are stored locally as audio files.</td>
+      <td>Speech-to-text routes through your device's configured recognizer; see your system settings for that service's policy. Audio attachments never leave the device.</td>
+    </tr>
+    <tr>
+      <td><code>CAMERA</code> / <code>READ_MEDIA_IMAGES</code></td>
+      <td>Attach photos to items, either freshly taken or picked from your library. Photos are copied into the app's private storage.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code>READ_CALENDAR</code> / <code>WRITE_CALENDAR</code></td>
+      <td><strong>Opt-in</strong> two-way sync with your system calendar. Disabled until you turn it on in Settings → Calendar Sync. When enabled, dated items mirror into a Cleartray-owned calendar on your device.</td>
+      <td>No — only the on-device system calendar is touched. Whether your system calendar itself is synced to Google/Apple/etc. is governed by <em>your</em> OS account settings, not Cleartray.</td>
+    </tr>
+    <tr>
+      <td><code>INTERNET</code></td>
+      <td>Declared so optional crash reporting (below) and <code>url_launcher</code> can work. The app performs <strong>no network requests on its own</strong> in normal operation.</td>
+      <td>Only if crash reporting is enabled (see §4) or you tap a link in an item note (which opens your browser, not us).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>4. Crash reporting — opt-in, off by default</h2>
+<p>The app ships with <strong>Sentry</strong> crash reporting integrated, but disabled. The toggle lives in Settings → Privacy (<code>crash_reporting_enabled</code>); the default is <code>false</code>.</p>
+<p>If you turn it on:</p>
+<ul>
+  <li>Uncaught crashes and unhandled errors are sent to Sentry (sentry.io, Functional Software Inc.).</li>
+  <li>We configure Sentry with <code>sendDefaultPii = false</code> and <code>attachScreenshot = false</code>. We do not attach your item content, attachments, screenshots, or device identifiers beyond what Sentry collects for stack-trace symbolication (OS version, app version, anonymous install ID).</li>
+  <li>A 10% trace sample rate is used to keep volume low.</li>
+  <li>You can turn it back off at any time; future crashes stop being sent immediately.</li>
+</ul>
+<p>Sentry's own privacy policy: <a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a></p>
+
+<h2>5. What we do <em>not</em> do</h2>
+<ul>
+  <li>We do not show ads.</li>
+  <li>We do not run analytics SDKs.</li>
+  <li>We do not have user accounts.</li>
+  <li>We do not sell, share, rent, or trade any data — there's nothing to sell.</li>
+  <li>We do not use your data for advertising, marketing, or any kind of profiling.</li>
+  <li>We do not have a Cleartray server. The app does not talk to one.</li>
+</ul>
+
+<h2>6. Children</h2>
+<p>Cleartray is rated for general audiences but is not directed at children under 13. We do not knowingly collect data from children (or anyone — see above).</p>
+
+<h2>7. Changes to this policy</h2>
+<p>If we change this policy, the new version replaces this file at the same URL and the <strong>Effective date</strong> at the top is updated. Material changes will be noted in the app's release notes.</p>
+
+<h2>8. Contact</h2>
+<p>Questions or concerns:</p>
+<p><strong><a href="mailto:feipeng@clarifisg.com">feipeng@clarifisg.com</a></strong></p>
+
+<hr />
+
+<p class="tag"><em>Cleartray is an independent app. "Getting Things Done" and "GTD" are trademarks of the David Allen Company; Cleartray is not affiliated with, endorsed by, or sponsored by David Allen Company.</em></p>
+
+</body>
+</html>
