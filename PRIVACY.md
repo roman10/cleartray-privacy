@@ -1,7 +1,7 @@
 # Cleartray Privacy Policy
 
 **Effective date:** 2026-05-21
-**App:** Cleartray (Android `app.cleartray.gtd`)
+**App:** Cleartray (Android `app.cleartray`)
 **Publisher contact:** feipeng@clarifisg.com
 
 Cleartray is an independent productivity app inspired by the Getting Things Done® (GTD) methodology. This policy explains exactly what the app does — and does not do — with your data.
